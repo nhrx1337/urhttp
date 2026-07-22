@@ -1,0 +1,14 @@
+CXX = g++
+CXXFLAGS = -Wall -g -I./include
+LIBS = -luring
+
+SRCS = main.cpp src/*.cpp
+TARGET = urhttp
+
+all: $(TARGET)
+
+$(TARGET): $(SRCS)
+	$(CXX) -o $(TARGET) $(SRCS) $(CXXFLAGS) $(LIBS)
+
+clean:
+	rm -f $(TARGET)
